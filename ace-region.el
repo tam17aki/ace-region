@@ -37,5 +37,16 @@
       (let ((ace-jump-mode-scope 'window))
         (call-interactively 'ace-jump-char-mode))))
 
+(defun ace-region--forward-backward-char ()
+  (when (region-active-p)
+    (cond ((< (mark) (point))
+           (forward-char))
+          (t
+           (backward-char)))))
+
+(add-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
+
+(remove-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
+
 (provide 'ace-region)
 ;;; ace-region.el ends here
