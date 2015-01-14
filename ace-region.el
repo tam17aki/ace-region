@@ -46,7 +46,7 @@
 
 (add-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
 
-(remove-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
+;; (remove-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
 
 (provide 'ace-region)
 ;;; ace-region.el ends here
