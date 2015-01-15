@@ -41,7 +41,7 @@
   (when (region-active-p)
     (cond ((< (mark) (point))
            (forward-char))
-          (t
+          ((> (mark) (point))
            (backward-char)))))
 
 (add-hook 'ace-jump-mode-end-hook #'ace-region--forward-backward-char)
